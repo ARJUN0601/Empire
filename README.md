@@ -63,6 +63,8 @@ Empire is a post-exploitation and adversary emulation framework that is used to 
 Please see our [Releases](https://github.com/BC-SECURITY/Empire/releases) or [Changelog](/CHANGELOG.md) page for detailed release notes.
 
 ###  Quickstart
+**Method : 1**
+
 When cloning this repository, you will need to recurse submodules.
 ```sh
 git clone --recursive https://github.com/BC-SECURITY/Empire.git
@@ -104,7 +106,39 @@ Instructions can be found [here](https://docs.github.com/en/github/authenticatin
 ```
 
 Check out the [Empire Docs](https://bc-security.gitbook.io/empire-wiki/) for more instructions on installing and using with Empire.
-For a complete list of changes, see the [changelog](./changelog).
+For a complete list of changes, see the [CHANGELOG](CHANGELOG.md).
+
+**Method : 2**
+```bash
+git clone --recursive https://github.com/BC-SECURITY/Empire.git
+cd Empire
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade setuptool
+pip install git+https://github.com/BC-SECURITY/PySecretSOCKS.git
+sudo systemctl start mysql
+pip install requirements.txt
+```
+
+#### Server
+
+```bash
+# Start Server
+python3 empire.py server
+
+# Help
+python3 empire.py server -h
+```
+
+#### Client
+
+```bash
+# Start Client
+python3 empire.py client
+
+# Help
+python3 empire.py client -h
+```
 
 ## Starkiller
 <div align="center"><img width="125" src="https://user-images.githubusercontent.com/20302208/208271792-91973457-2d6c-4080-8625-0f9eebed0a82.png"></div>
